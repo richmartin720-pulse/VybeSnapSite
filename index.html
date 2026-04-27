@@ -1,10 +1,274 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>VybeSnap</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VybeSnap – Daily Vibes with Friends</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: radial-gradient(circle at top, #211333 0%, #070711 45%, #020208 100%);
+      color: #fff;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .glow {
+      position: fixed;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      filter: blur(90px);
+      opacity: 0.35;
+      z-index: 0;
+    }
+
+    .glow.one { background: #20f0d0; top: -120px; left: -120px; }
+    .glow.two { background: #ff3ea5; bottom: -140px; right: -120px; }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 22px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 90px;
+    }
+
+    .brand {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .brand span {
+      background: linear-gradient(90deg, #fff, #d946ef, #22d3ee, #34d399);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    nav a {
+      color: #aaa;
+      text-decoration: none;
+      margin-left: 18px;
+      font-size: 14px;
+    }
+
+    nav a:hover { color: #fff; }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 0.85fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: clamp(46px, 8vw, 82px);
+      line-height: 0.95;
+      letter-spacing: -3px;
+      margin-bottom: 24px;
+    }
+
+    h1 span {
+      background: linear-gradient(90deg, #fff, #d946ef, #22d3ee, #34d399);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      font-size: 21px;
+      color: #c8c8d2;
+      line-height: 1.5;
+      max-width: 620px;
+      margin-bottom: 34px;
+    }
+
+    .cta {
+      display: inline-block;
+      padding: 15px 24px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #a855f7, #ec4899, #22d3ee);
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      box-shadow: 0 0 34px rgba(236, 72, 153, 0.35);
+    }
+
+    .note {
+      margin-top: 18px;
+      color: #8f8fa3;
+      font-size: 14px;
+    }
+
+    .icon-card {
+      width: 100%;
+      max-width: 360px;
+      aspect-ratio: 1;
+      margin: 0 auto;
+      border-radius: 44px;
+      background: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 30px 90px rgba(0,0,0,0.55);
+      position: relative;
+    }
+
+    .ring {
+      width: 68%;
+      height: 68%;
+      border-radius: 50%;
+      background: conic-gradient(from 210deg, #19e8d2, #6ee7b7, #fde047, #fb7185, #ec4899, #8b5cf6, #38bdf8, #19e8d2);
+      position: relative;
+      box-shadow: 0 0 35px rgba(34,211,238,0.3);
+    }
+
+    .ring::after {
+      content: "";
+      position: absolute;
+      inset: 22%;
+      background: #070711;
+      border-radius: 50%;
+    }
+
+    .check {
+      position: absolute;
+      width: 44%;
+      height: 24%;
+      border-left: 32px solid white;
+      border-bottom: 32px solid white;
+      transform: rotate(-45deg);
+      border-radius: 8px;
+      z-index: 2;
+      margin-top: -12px;
+    }
+
+    .emoji {
+      position: absolute;
+      font-size: 34px;
+      filter: drop-shadow(0 8px 16px rgba(0,0,0,0.45));
+    }
+
+    .e1 { top: 12%; right: 18%; }
+    .e2 { bottom: 18%; right: 14%; }
+    .e3 { top: 34%; left: 20%; }
+
+    .features {
+      margin-top: 100px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .feature {
+      padding: 24px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.055);
+      border: 1px solid rgba(255,255,255,0.09);
+    }
+
+    .feature h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .feature p {
+      color: #aaaabe;
+      line-height: 1.5;
+      font-size: 15px;
+    }
+
+    footer {
+      margin-top: 90px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      color: #8e8e9f;
+      font-size: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    footer a {
+      color: #aaa;
+      text-decoration: none;
+    }
+
+    @media (max-width: 800px) {
+      nav { margin-bottom: 54px; }
+      .hero { grid-template-columns: 1fr; text-align: center; }
+      .subtitle { margin-left: auto; margin-right: auto; }
+      .features { grid-template-columns: 1fr; }
+      nav div:last-child { display: none; }
+    }
+  </style>
 </head>
 <body>
-  <h1>VybeSnap</h1>
-  <p>Snap your mood. See your friends.</p>
+  <div class="glow one"></div>
+  <div class="glow two"></div>
+
+  <main class="page">
+    <nav>
+      <div class="brand">Vybe<span>Snap</span></div>
+      <div>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="support.html">Support</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div>
+        <h1>Snap your mood.<br><span>See your friends.</span></h1>
+        <p class="subtitle">
+          VybeSnap is a simple daily photo and emoji check-in for close friends.
+          Share your vibe, keep your streak, and see how your circle is feeling.
+        </p>
+        <a class="cta" href="#">Coming soon to the App Store</a>
+        <p class="note">Friends-only. Private by default. Built for quick daily vibes.</p>
+      </div>
+
+      <div class="icon-card">
+        <div class="ring"></div>
+        <div class="check"></div>
+        <div class="emoji e1">😍</div>
+        <div class="emoji e2">😮</div>
+        <div class="emoji e3">😁</div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="feature">
+        <h3>📸 Daily Snap</h3>
+        <p>Capture a quick photo, pick your emoji, and share your vibe in seconds.</p>
+      </div>
+      <div class="feature">
+        <h3>🔥 Streaks</h3>
+        <p>Build a simple daily ritual and keep your VybeSnap streak alive.</p>
+      </div>
+      <div class="feature">
+        <h3>📊 Vibe Meter</h3>
+        <p>See the mood of your friends at a glance with the VybeSnap Vibe Meter.</p>
+      </div>
+    </section>
+
+    <footer>
+      <span>© 2026 VybeSnap</span>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms</a>
+      <a href="support.html">Support</a>
+      <a href="delete-account.html">Delete Account</a>
+    </footer>
+  </main>
 </body>
 </html>
