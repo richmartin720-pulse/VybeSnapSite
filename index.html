@@ -3,13 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VybeSnap – Daily Vibes with Friends</title>
+  <title>VybeSnap – Daily Vybes with Friends</title>
 
-  <!-- FAVICONS -->
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
+  <!-- FAVICON -->
+  <link rel="icon" href="favicon-32.png">
+  <link rel="apple-touch-icon" href="apple-touch.png">
   <meta name="theme-color" content="#0a0a0f">
 
   <style>
@@ -22,32 +20,17 @@
       min-height: 100vh;
     }
 
-    .glow {
-      position: fixed;
-      width: 420px;
-      height: 420px;
-      border-radius: 50%;
-      filter: blur(90px);
-      opacity: 0.35;
-      z-index: 0;
-    }
-
-    .glow.one { background: #20f0d0; top: -120px; left: -120px; }
-    .glow.two { background: #ff3ea5; bottom: -140px; right: -120px; }
-
     .page {
-      position: relative;
-      z-index: 1;
       max-width: 1100px;
       margin: 0 auto;
-      padding: 32px 22px;
+      padding: 40px 20px;
     }
 
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 90px;
+      margin-bottom: 80px;
     }
 
     .brand {
@@ -64,8 +47,7 @@
     nav a {
       color: #aaa;
       text-decoration: none;
-      margin-left: 18px;
-      font-size: 14px;
+      margin-left: 20px;
     }
 
     nav a:hover { color: #fff; }
@@ -78,9 +60,8 @@
     }
 
     h1 {
-      font-size: clamp(46px, 8vw, 80px);
-      line-height: 0.95;
-      letter-spacing: -2px;
+      font-size: clamp(44px, 7vw, 70px);
+      line-height: 1;
       margin-bottom: 20px;
     }
 
@@ -91,7 +72,7 @@
     }
 
     .subtitle {
-      font-size: 20px;
+      font-size: 18px;
       color: #c8c8d2;
       margin-bottom: 30px;
     }
@@ -108,21 +89,16 @@
 
     /* ICON */
     .icon-card {
-      width: 100%;
-      max-width: 340px;
-      aspect-ratio: 1;
-      margin: 0 auto;
-      border-radius: 40px;
-      background: rgba(255,255,255,0.05);
       display: flex;
-      align-items: center;
       justify-content: center;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+      align-items: center;
     }
 
     .icon-card img {
-      width: 80%;
-      filter: drop-shadow(0 0 40px rgba(34,211,238,0.2));
+      width: 260px;
+      height: auto;
+      border-radius: 28px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.6);
     }
 
     footer {
@@ -130,7 +106,6 @@
       padding-top: 20px;
       border-top: 1px solid rgba(255,255,255,0.08);
       color: #888;
-      font-size: 14px;
       display: flex;
       justify-content: center;
       gap: 20px;
@@ -152,11 +127,10 @@
 </head>
 
 <body>
-  <div class="glow one"></div>
-  <div class="glow two"></div>
 
   <main class="page">
 
+    <!-- NAV -->
     <nav>
       <div class="brand">Vybe<span>Snap</span></div>
       <div>
@@ -166,23 +140,26 @@
       </div>
     </nav>
 
+    <!-- HERO -->
     <section class="hero">
       <div>
         <h1>Snap your mood.<br><span>See your friends.</span></h1>
 
         <p class="subtitle">
           Daily photo + emoji check-ins.  
-          Keep it real. See your friends’ vibes instantly.
+          Keep it real. See your friends’ vybes instantly.
         </p>
 
         <a class="cta" href="#">Coming soon to the App Store</a>
       </div>
 
+      <!-- THIS IS THE ICON -->
       <div class="icon-card">
         <img src="icon.png" alt="VybeSnap Icon">
       </div>
     </section>
 
+    <!-- FOOTER -->
     <footer>
       <span>© 2026 VybeSnap</span>
       <a href="privacy.html">Privacy</a>
@@ -192,5 +169,6 @@
     </footer>
 
   </main>
+
 </body>
 </html>
