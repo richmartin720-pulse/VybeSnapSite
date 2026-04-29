@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VybeSnap – Daily Vybes with Friends</title>
+  <title>VybeSnap – Social, without the noise</title>
 
-  <!-- FAVICON -->
-  <link rel="icon" href="favicon-32.png">
-  <link rel="apple-touch-icon" href="apple-touch.png">
+  <!-- FAVICONS -->
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch.png">
   <meta name="theme-color" content="#0a0a0f">
 
   <style>
@@ -74,7 +75,14 @@
     .subtitle {
       font-size: 18px;
       color: #c8c8d2;
+      margin-bottom: 20px;
+    }
+
+    .positioning {
+      font-size: 16px;
+      color: #9aa0b5;
       margin-bottom: 30px;
+      line-height: 1.5;
     }
 
     .cta {
@@ -85,6 +93,13 @@
       color: white;
       text-decoration: none;
       font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .vibe-teaser {
+      font-size: 14px;
+      color: #8a8fa8;
+      margin-top: 10px;
     }
 
     /* ICON */
@@ -110,6 +125,7 @@
       justify-content: center;
       gap: 20px;
       flex-wrap: wrap;
+      text-align: center;
     }
 
     footer a {
@@ -143,17 +159,32 @@
     <!-- HERO -->
     <section class="hero">
       <div>
-        <h1>Snap your mood.<br><span>See your friends.</span></h1>
+
+        <h1>
+          Social, without the noise.<br>
+          <span>Just your people.</span>
+        </h1>
 
         <p class="subtitle">
-          Daily photo + emoji check-ins.  
-          Keep it real. See your friends’ vybes instantly.
+          Snap your mood. See your friends.
         </p>
 
-        <a class="cta" href="#">Coming soon to the App Store</a>
+        <p class="positioning">
+          No adverts. No influencers. No comments. No noise.  
+          Just real, daily moments with your friends.
+        </p>
+
+        <a class="cta" href="#">
+          Coming soon to the App Store
+        </a>
+
+        <p class="vibe-teaser">
+          See your entire friend group’s mood at a glance with the VybeSnap Vibe Meter.
+        </p>
+
       </div>
 
-      <!-- THIS IS THE ICON -->
+      <!-- ICON -->
       <div class="icon-card">
         <img src="icon.png" alt="VybeSnap Icon">
       </div>
@@ -166,6 +197,8 @@
       <a href="terms.html">Terms</a>
       <a href="support.html">Support</a>
       <a href="delete-account.html">Delete Account</a>
+      <br>
+      <a href="mailto:support@vybesnap.app">support@vybesnap.app</a>
     </footer>
 
   </main>
